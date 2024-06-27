@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort String Alphabetically</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sort String Alphabetically</h1>
+        <input type="text" id="stringInput" placeholder="Enter a string">
+        <button onclick="sortString()">Sort</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function sortString() {
+            let inputString = document.getElementById('stringInput').value;
+            
+            if (inputString.trim() === "") {
+                document.getElementById('result').innerText = "Please enter a valid string.";
+                return;
+            }
+            
+ 
+            let charArray = inputString.split('');
+            
+
+            charArray.sort();
+            
+            let sortedString = charArray.join('');
+            
+            document.getElementById('result').innerText = "Sorted String: " + sortedString;
+        }
+    </script>
+</body>
+</html>

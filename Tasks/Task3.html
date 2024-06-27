@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            background-color: #fff;
+            width: 350px;
+            margin: 20px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-weight: bold;
+            padding:10px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color:#f0f0f0;
+        }
+
+        .first {
+            padding: 10px;
+            padding-left: 0px;
+        }
+
+        #fname {
+            margin-left: 18px;
+        }
+
+        form {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form onsubmit="return false;">
+        <div class="first">
+            <label for="fname">First Number:</label>
+            <input type="text" id="fname" name="fname">
+        </div>
+
+        <div>
+            <label for="sname">Second Number:</label>
+            <input type="text" id="sname" name="sname">
+        </div><br>
+
+        <button id="mul" onclick="mult()">Multiply</button>
+        <button id="div" onclick="divion()">Divide</button>
+    </form>
+
+    <div>
+        <p id="text">Result will be displayed here</p>
+    </div>
+</div>
+
+<script>
+    function mult() {
+        let fnum = parseFloat(document.getElementById("fname").value);
+        let snum = parseFloat(document.getElementById("sname").value);
+        let result = fnum * snum;
+        document.getElementById("text").innerText = "Result: " + result;
+    }
+
+    function divion() {
+        let fnum = parseFloat(document.getElementById("fname").value);
+        let snum = parseFloat(document.getElementById("sname").value);
+        if (snum === 0) {
+            document.getElementById("text").innerText = "Cannot divide by zero!";
+        } else {
+            let result = fnum / snum;
+            document.getElementById("text").innerText = "Result: " + result;
+        }
+    }
+</script>
+</body>
+</html>
